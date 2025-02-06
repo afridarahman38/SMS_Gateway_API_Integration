@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "068353e0-ce9d-4c56-ae05-74ab02cec715",
+		"name": "SBL SMS Gateway Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34423288",
+		"_collection_link": "https://dark-equinox-525809.postman.co/workspace/My-Workspace~566cc695-ab12-4b9d-85df-ed94416e34da/collection/34423288-068353e0-ce9d-4c56-ae05-74ab02cec715?action=share&source=collection_link&creator=34423288"
+	},
+	"item": [
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\": \"era_admin\",\n\t\"password\": \"Era@1234\",\n\t\"channelLogin\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.130.114.127:3001/user/login",
+					"protocol": "http",
+					"host": [
+						"10",
+						"130",
+						"114",
+						"127"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mobile Send OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcklkIjoiRVJBX0FETUlOIiwicm9sZXMiOlsiQWRtaW4iXSwiZ3JhbnRlZElQTGlzdHMiOltudWxsXSwiZmVhdHVyZXMiOlsiMS4xIiwiMS4yIiwiMS4zIiwiMS40IiwiMS42IiwiMS41IiwiMi4xIiwiMi4yIiwiMi4zIiwiMi40IiwiMi41IiwiMi42IiwiMy4xIiwiMy4yIiwiMy4zIiwiMy40IiwiNC4xIiwiNC4yIiwiNC4yLjIiLCI0LjIuMSIsIjQuMi4zIiwiNC4yLjQiLCI1LjEiLCI1LjEuMSIsIjUuMS4yIiwiNS4xLjMiLCI1LjIiLCI1LjIuMSIsIjUuMi4yIiwiNS4zIiwiNS40IiwiNi4xIiwiNi4yIiwiNi4zIiwiNy4xIiwiNy4yIiwiNy4zIiwiNy40IiwiOC4xIiwiOC4yIiwiOC4zIiwiOC40IiwiOS4xIiwiOS4yIiwiNS41Il0sImFjY2Vzc0lkIjo0MjQyLCJpYXQiOjE3Mzc2MjQ1ODksImV4cCI6MTczNzY2MDU4OX0.suFj74l3Kgf0jb9UQtDMGpflc5MlLM0Q2zPxVK0SpdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobile\": \"01836999981\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.130.114.127:3001/conval/mobile/send-otp",
+					"protocol": "http",
+					"host": [
+						"10",
+						"130",
+						"114",
+						"127"
+					],
+					"port": "3001",
+					"path": [
+						"conval",
+						"mobile",
+						"send-otp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
